@@ -1,2 +1,2 @@
-import EthereumDarkblockWidget from "./lib/EthWidget";
-export default EthereumDarkblockWidget;
+import AvalancheDarkblockWidget from "./lib/AvaxWidget";
+export default AvalancheDarkblockWidget;

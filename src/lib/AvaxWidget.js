@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Stack, utils, widgetMachine } from "@darkblock.io/shared-components"
 import { useMachine } from "@xstate/react"
 
-const platform = "Avalanche"
+const platform = "Polygon"
 
 const AvalancheDarkblockWidget = ({
   contractAddress,
