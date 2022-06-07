@@ -30,7 +30,7 @@ stories.add("test", () => {
       <div style={{ maxWidth: "700px" }}>
         <AvalancheDarkblockWidget
           contractAddress="0xfd48de401e23f619a25a0edcf6d249216860fbe6"
-          tokenId="30553606573219150352991292921105176340809048341686170040023897679188805550081"
+          tokenId="2244"
           w3={web3}
           cb={cb}
           config={{
