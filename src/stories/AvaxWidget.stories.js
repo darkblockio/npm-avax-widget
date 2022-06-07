@@ -13,6 +13,8 @@ stories.add("test", () => {
   const Widget = () => {
     const [web3, setWeb3] = useState(null)
     const [address, setAddress] = useState(null)
+    const contractAddress = "0xfd48de401e23f619a25a0edcf6d249216860fbe6"
+    const token_id = "2244"
 
     useEffect(() => {
       window.ethereum
@@ -28,9 +30,17 @@ stories.add("test", () => {
     }, [])
     return (
       <div style={{ maxWidth: "700px" }}>
+        <strong>Testing With: </strong>
+        <hr/>
+        <div>
+          Contract address: {contractAddress}
+          <br/>
+          Token_id: {token_id}
+        </div>
+
         <AvalancheDarkblockWidget
-          contractAddress="0xfd48de401e23f619a25a0edcf6d249216860fbe6"
-          tokenId="2244"
+          contractAddress= {contractAddress}
+          tokenId= {token_id}
           w3={web3}
           cb={cb}
           config={{
