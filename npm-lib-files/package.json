@@ -1,7 +1,7 @@
 {
-  "name": "@darkblock.io/eth-widget",
-  "version": "0.0.27",
-  "description": "Darkblock.io React Component Library",
+  "name": "@darkblock.io/avax-widget",
+  "version": "0.0.1",
+  "description": "Darkblock.io React Avalanche Widget",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "author": "roberto@darkblock.io",
