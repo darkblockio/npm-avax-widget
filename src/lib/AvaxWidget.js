@@ -39,6 +39,9 @@ const AvalancheDarkblockWidget = ({
 
   useEffect(() => {
     callback(state.value)
+    if (!w3) {
+      send({ type: 'NO_WALLET' })
+    }
 
     if (state.value === "idle") {
       send({ type: "FETCH_ARWEAVE" })
