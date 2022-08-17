@@ -1,27 +1,29 @@
 import Web3 from "web3"
 import React, { useEffect, useState } from "react"
 import { storiesOf } from "@storybook/react"
-import AvalancheDarkblockWidget from "../lib/AvaxWidget"
+import AvalancheUpgradeWidget from "../lib/AvaxUpgradeWidget"
 
-const stories = storiesOf("Avalanche Darkblock Widget", module)
+const stories = storiesOf("Avalanche Upgrade Widget", module)
 
-stories.add("Viewer", () => {
+stories.add("Add Content", () => {
   const cb = (param1) => {
-    console.log(param1)
+    console.log("upgrade cb", param1)
   }
 
   const Widget = () => {
     const [web3, setWeb3] = useState(null)
+    const [loaded, setLoaded] = useState(false)
     const contractAddress = "0x7bdc01a74dd59759c3965eb11fd086e225a37563"
     const token_id = "1"
-    const [loaded, setLoaded] = useState(false)
+
+    const apiKey = "dgtqh26mv8mtgemq4tys47d4a2ax" //internal DB key - not for public use
 
     useEffect(() => {
       if (window.ethereum) {
         window.ethereum
           .request({ method: "eth_requestAccounts" })
           .then((accounts) => {
-            let w3 = new Web3(ethereum)
+            let w3 = new Web3(window.ethereum)
             setWeb3(w3)
             setLoaded(true)
           })
@@ -39,14 +41,15 @@ stories.add("Viewer", () => {
     return (
       <div style={{ maxWidth: "700px" }}>
         {loaded && (
-          <AvalancheDarkblockWidget
+          <AvalancheUpgradeWidget
+            apiKey={apiKey}
             contractAddress={contractAddress}
             tokenId={token_id}
             w3={web3}
             cb={cb}
             config={{
               customCssClass: "custom-class",
-              debug: true,
+              debug: false,
               imgViewer: {
                 showRotationControl: true,
                 autoHideControls: true,
