@@ -20,12 +20,12 @@ import "@darkblock.io/avax-widget"
 require("@darkblock.io/avax-widget")
 ```
 
-## Ethereum Widget Component
+## Avalanche Widget Component
 
 ### Input
 
 - **contractAddress:** contractAddress
-- **tokenId:** id of the NFT in Ethereum
+- **tokenId:** id of the NFT in Avalanche
 - **w3:\*** web3 object
 - **cb:** callback function to be triggered on the widget's state change (optional)
 - **config:** config object (optional)
