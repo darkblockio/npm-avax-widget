@@ -18,12 +18,12 @@ Once the library is installed, import or require components into your codebase, 
 import EthereumDarkblockWidget "@darkblock.io/eth-widget"
 ```
 
-## Ethereum Widget Component
+## Avalanche Widget Component
 
 ### Input
 
 - **contractAddress:** contractAddress
-- **tokenId:** id of the NFT in Ethereum
+- **tokenId:** id of the NFT in Avalanche
 - **w3:\*** web3 object
 - **cb:** callback function to be triggered on the widget's state change (optional)
 - **config:** config object (optional)
@@ -53,15 +53,44 @@ const cb = (param) => {
 ### Example
 
 ```
-import EthereumDarkblockWidget from "@darkblock.io/eth-widget"
+import { AvalancheDarkblockWidget } from "@darkblock.io/avax-widget"
 
 const Widget = () => {
   ...
 
+  const contractAddress = 'nft contract address'
+  const tokenId = 'nft token id'
+  
   return (
-    <EthereumDarkblockWidget
-      contractAddress="0x495f947276749ce646f68ac8c248420045cb7b5e"
-      tokenId="30553606573219150352991292921105176340809048341686170040023897672591735783425"
+    <AvalancheDarkblockWidget
+      contractAddress={contractAddress}
+      tokenId={tokenId
+      w3={web3}
+      cb={(p) => console.log(p)}
+      config={config}
+    />
+  )
+}
+
+export default Widget
+
+```
+
+### Example
+
+```
+import { AvalancheUpgradeWidget } from "@darkblock.io/avax-widget"
+
+const Widget = () => {
+  const apiKey = '** contact darkblock for apikey **'
+  const contractAddress = 'nft contract address'
+  const tokenId = 'nft token id'
+
+  return (
+    <AvalancheUpgradeWidget
+      apiKey={apiKey} 
+      contractAddress={contractAddress}
+      tokenId={tokenId
       w3={web3}
       cb={(p) => console.log(p)}
       config={config}
