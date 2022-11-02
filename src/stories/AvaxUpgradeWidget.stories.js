@@ -16,7 +16,7 @@ stories.add("Add Content", () => {
     const contractAddress = "0x7bdc01a74dd59759c3965eb11fd086e225a37563"
     const token_id = "1"
 
-    const apiKey = "dgtqh26mv8mtgemq4tys47d4a2ax" //internal DB key - not for public use
+    const apiKey = "" //Darkblock API key goes here
 
     useEffect(() => {
       if (window.ethereum) {
