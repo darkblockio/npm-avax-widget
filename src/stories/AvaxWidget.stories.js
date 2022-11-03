@@ -53,6 +53,7 @@ stories.add("Viewer", () => {
                 controlsFadeDelay: true,
               },
             }}
+            dev={false}
           />
         )}
       </div>
