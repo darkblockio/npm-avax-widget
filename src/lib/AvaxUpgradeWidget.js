@@ -20,8 +20,9 @@ const AvalancheUpgradeWidget = ({
       controlsFadeDelay: true,
     },
   },
+  dev = false,
 }) => {
-  const [state, send] = useMachine(() => upgradeMachine(tokenId, contractAddress, platform))
+  const [state, send] = useMachine(() => upgradeMachine(tokenId, contractAddress, platform, dev))
   const [address, setAddress] = useState(null)
 
   const callback = (state) => {
@@ -85,7 +86,7 @@ const AvalancheUpgradeWidget = ({
 
     try {
       setTimeout(async () => {
-        creatorDataWithOwner = await utils.getCreator(contractAddress, tokenId, platform)
+        creatorDataWithOwner = await utils.getCreator(contractAddress, tokenId, platform, dev)
         if (
           creatorDataWithOwner &&
           creatorDataWithOwner.creator_address &&
