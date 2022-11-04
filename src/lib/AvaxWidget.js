@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Stack, utils, widgetMachine } from "@darkblock.io/shared-components"
 import { useMachine } from "@xstate/react"
+import signTypedData, { SIGNING_TYPE } from "../utils/signTypedData"
 
 const platform = "Avalanche"
 
@@ -134,48 +135,21 @@ const AvalancheDarkblockWidget = ({
       ) {
         send({ type: "FAIL" })
       } else {
-        signature = await signData(address, sessionToken, w3, () => {
-          send({ type: "SUCCESS" })
+        signature = await signTypedData(sessionToken, w3, SIGNING_TYPE.accessAuth).then((response) => {
+          return response
         })
+
+        if (signature) {
+          send({ type: "SUCCESS" })
+        } else {
+          send({ type: "FAIL" })
+        }
       }
     } catch (e) {
-      console.log(e)
       signature ? send({ type: "FAIL" }) : send({ type: "CANCEL" })
     }
 
     setEpochSignature(epoch + "_" + signature)
-  }
-
-  const signData = (address, data, w3, cb) => {
-    return new Promise((resolve, reject) => {
-      const typedData = [
-        {
-          type: "string",
-          name: "Message",
-          value: data,
-        },
-      ]
-      return w3.currentProvider.send(
-        {
-          method: "eth_signTypedData",
-          params: [typedData, address],
-        },
-        (err, result) => {
-          if (err) {
-            return reject(err)
-          }
-
-          if (result.error) {
-            reject(result.error.message)
-          }
-
-          if (typeof cb === "function") {
-            cb()
-          }
-          resolve(result.result)
-        }
-      )
-    })
   }
 
   return <Stack state={state} authenticate={() => send({ type: "SIGN" })} urls={stackMediaURLs} config={config} />
