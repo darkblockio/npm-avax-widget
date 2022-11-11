@@ -3,7 +3,7 @@
 ## Getting Started 🚀
 
 ### Hey everyone, thanks for choosing to use our Darkblock NPM. Here are the instructions on how to use it in your website.
-<br>
+
 
 ### All of our documentation can be found [here](https://docs.darkblock.io/npm/avalanchenpm/).
 
