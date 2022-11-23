@@ -129,6 +129,7 @@ const AvalancheUpgradeWidget = ({
           send({ type: "RESET" })
         }
       }}
+      dev={dev}
     />
   )
 }
