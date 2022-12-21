@@ -16,6 +16,12 @@ stories.add("Viewer", () => {
     const token_id = "1"
     const [loaded, setLoaded] = useState(false)
 
+    const dbConfigOptions = {
+      include: [],
+      exclude: [],
+      sort: [],
+    }
+
     useEffect(() => {
       if (window.ethereum) {
         window.ethereum
@@ -54,6 +60,7 @@ stories.add("Viewer", () => {
               },
             }}
             dev={false}
+            dbConfig={dbConfigOptions}
           />
         )}
       </div>

@@ -17,12 +17,13 @@ const AvalancheDarkblockWidget = ({
       controlsFadeDelay: true,
     },
   },
-  network = 'mainnet',
+  network = "mainnet",
   dev = false,
+  dbConfig = null,
 }) => {
   const upperNetwork = network.charAt(0).toUpperCase() + network.slice(1)
-  const platform = network.toLowerCase() === 'mainnet' ? "Avalanche" : `Avalanche-${upperNetwork}` 
-  const [state, send] = useMachine(() => widgetMachine(tokenId, contractAddress, platform, dev))
+  const platform = network.toLowerCase() === "mainnet" ? "Avalanche" : `Avalanche-${upperNetwork}`
+  const [state, send] = useMachine(() => widgetMachine(tokenId, contractAddress, platform, dev, dbConfig))
   const [address, setAddress] = useState(null)
   const [mediaURL, setMediaURL] = useState("")
   const [stackMediaURLs, setStackMediaURLs] = useState("")
