@@ -61,6 +61,7 @@ stories.add("Viewer", () => {
             }}
             dev={false}
             dbConfig={dbConfigOptions}
+           
           />
         )}
       </div>

@@ -20,10 +20,11 @@ const AvalancheDarkblockWidget = ({
   network = "mainnet",
   dev = false,
   dbConfig = null,
+  verified 
 }) => {
   const upperNetwork = network.charAt(0).toUpperCase() + network.slice(1)
   const platform = network.toLowerCase() === "mainnet" ? "Avalanche" : `Avalanche-${upperNetwork}`
-  const [state, send] = useMachine(() => widgetMachine(tokenId, contractAddress, platform, dev, dbConfig))
+  const [state, send] = useMachine(() => widgetMachine(tokenId, contractAddress, platform, dev, dbConfig, verified))
   const [address, setAddress] = useState(null)
   const [mediaURL, setMediaURL] = useState("")
   const [stackMediaURLs, setStackMediaURLs] = useState("")
@@ -89,7 +90,8 @@ const AvalancheDarkblockWidget = ({
             state.context.contractAddress,
             null,
             platform,
-            address
+            address,
+            verified
           )
         )
 
@@ -104,7 +106,8 @@ const AvalancheDarkblockWidget = ({
               state.context.contractAddress,
               null,
               platform,
-              address
+              address,
+              verified
             )
           )
         })
@@ -128,7 +131,7 @@ const AvalancheDarkblockWidget = ({
     let ownerDataWithOwner
 
     try {
-      ownerDataWithOwner = await utils.getOwner(contractAddress, tokenId, platform, address, dev)
+      ownerDataWithOwner = await utils.getOwner(contractAddress, tokenId, platform, address, dev, verified)
 
       if (
         !ownerDataWithOwner ||

@@ -87,7 +87,7 @@ const AvalancheUpgradeWidget = ({
 
     try {
       setTimeout(async () => {
-        creatorDataWithOwner = await utils.getCreator(contractAddress, tokenId, platform, dev)
+        creatorDataWithOwner = await utils.getCreator(contractAddress, tokenId, platform, dev, verified)
 
         const verifyOwnership = creatorDataWithOwner.all_creators.find(
           (creator) => creator.toLowerCase() === address.toLowerCase()
