@@ -58,6 +58,7 @@ stories.add("Viewer", () => {
                 autoHideControls: true,
                 controlsFadeDelay: true,
               },
+              showTabs: "false"
             }}
             dev={false}
             dbConfig={dbConfigOptions}

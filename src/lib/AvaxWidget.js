@@ -16,6 +16,7 @@ const AvalancheDarkblockWidget = ({
       autoHideControls: true,
       controlsFadeDelay: true,
     },
+    showTabs: "false"
   },
   network = "mainnet",
   dev = false,

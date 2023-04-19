@@ -17,6 +17,7 @@ const AvalancheUpgradeWidget = ({
       autoHideControls: true,
       controlsFadeDelay: true,
     },
+    showTabs: "false"
   },
   network = "mainnet",
   dev = false,
