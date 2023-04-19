@@ -11,4 +11,4 @@ If that link doesn't work then you can copy and paste this link into your browse
 
 https://docs.darkblock.io/npm/avalanchenpm/
 
-## Thanks, see you there!!
+## Thanks, see you there!
