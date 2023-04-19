@@ -55,6 +55,7 @@ stories.add("Add Content", () => {
                 autoHideControls: true,
                 controlsFadeDelay: true,
               },
+              showTabs: "false"
             }}
             dev={false}
           />
