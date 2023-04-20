@@ -24,7 +24,7 @@ const AvalancheUpgradeWidget = ({
 }) => {
   const upperNetwork = network.charAt(0).toUpperCase() + network.slice(1)
   const platform = network.toLowerCase() === "mainnet" ? "Avalanche" : `Avalanche-${upperNetwork}`
-  const [state, send] = useMachine(() => upgradeMachine(tokenId, contractAddress, platform, dev))
+  const [state, send] = useMachine(() => upgradeMachine(tokenId, contractAddress, platform, dev, address))
   const [address, setAddress] = useState(null)
 
   const callback = (state) => {
