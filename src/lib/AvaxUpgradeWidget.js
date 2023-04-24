@@ -17,14 +17,13 @@ const AvalancheUpgradeWidget = ({
       autoHideControls: true,
       controlsFadeDelay: true,
     },
-    showTabs: "false"
   },
   network = "mainnet",
-  dev = false,
+  dev = true,
 }) => {
   const upperNetwork = network.charAt(0).toUpperCase() + network.slice(1)
   const platform = network.toLowerCase() === "mainnet" ? "Avalanche" : `Avalanche-${upperNetwork}`
-  const [state, send] = useMachine(() => upgradeMachine(tokenId, contractAddress, platform, dev, address))
+  const [state, send] = useMachine(() => upgradeMachine(tokenId, contractAddress, platform, dev))
   const [address, setAddress] = useState(null)
 
   const callback = (state) => {
@@ -88,7 +87,7 @@ const AvalancheUpgradeWidget = ({
 
     try {
       setTimeout(async () => {
-        creatorDataWithOwner = await utils.getCreator(contractAddress, tokenId, platform, dev, verified)
+        creatorDataWithOwner = await utils.getCreator(contractAddress, tokenId, platform, dev)
 
         const verifyOwnership = creatorDataWithOwner.all_creators.find(
           (creator) => creator.toLowerCase() === address.toLowerCase()

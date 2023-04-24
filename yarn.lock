@@ -1293,10 +1293,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.0.2.tgz#1bfafe4b7ed0f3e4105837e056e0a89b108ebe36"
   integrity sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==
 
-"@darkblock.io/shared-components@0.2.5-beta.10":
-  version "0.2.5-beta.10"
-  resolved "https://registry.yarnpkg.com/@darkblock.io/shared-components/-/shared-components-0.2.5-beta.10.tgz#101e1615ce6b011a0c3aa34d0055e89b6d0a7b6b"
-  integrity sha512-5YARTTab5/4N1YWMUThjaOxmEUcRIfKxRiTdmK+8hOrM9riw8omXPF68bDErahXsoXuRzT2vEJOiRyVUEDdenA==
+"@darkblock.io/shared-components@0.2.5-beta.13":
+  version "0.2.5-beta.13"
+  resolved "https://registry.yarnpkg.com/@darkblock.io/shared-components/-/shared-components-0.2.5-beta.13.tgz#68aba6bfee6a83d669b105e16af7e2fa1d5c5f68"
+  integrity sha512-wc4ypahh6YpE2JYG6D53xP2L2yfiS7aINUI2P4kC6HxWHiDw+bdp6lEn50r08cqieM4lj04o07v7Foojp1M3dQ==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^6.2.0"
     "@fortawesome/free-solid-svg-icons" "^6.2.0"
